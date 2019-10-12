@@ -1,0 +1,46 @@
+```{r}
+#Petroleo
+#Reservas encontradas de petroleo
+library(htmltab)
+oilfound_link="https://www.cia.gov/library/publications/the-world-factbook/fields/264.html"
+oilfound_path='//*[@id="fieldListing"]'
+oilfound=htmltab(doc=oilfound_link,which=oilfound_path)
+#Exportacion de petroleo
+library(htmltab)
+oilexport_link="https://www.cia.gov/library/publications/the-world-factbook/fields/262.html"
+oilexport_path='//*[@id="fieldListing"]'
+oilexport=htmltab(doc=oilexport_link,which=oilexport_path)
+```
+
+```{r}
+#Importacion armas
+library(rio)
+dataarms="https://github.com/Joaquin18Araujo2034/Estadistica2/raw/master/Data_Extract_From_World_Development_Indicators.xlsx"
+armsimport=import(dataarms)
+```
+
+```{r}
+#Militar
+#Gastos militares del PBI por país [BBDD CIA]:
+library(htmltab)
+pbi_militar= "https://www.cia.gov/library/publications/the-world-factbook/fields/330rank.html"
+path_militar= '//*[@id="rankOrder"]'
+militar= htmltab(doc=pbi_militar, which=path_militar)
+```
+
+```{r}
+#Economico
+#Impuestos y otros Ingresos
+tax_link= "https://www.cia.gov/library/publications/the-world-factbook/fields/225rank.html"
+tax_path= '//*[@id="rankOrder"]'
+tax= htmltab (doc= tax_link, which= tax_path)
+```
+
+```{r}
+#Politico
+#Indice de Democracia
+demolink= "https://en.wikipedia.org/wiki/Democracy_Index"
+demopath= '//*[@id="mw-content-text"]/div/table[2]'
+demo_index= htmltab (doc= demolink, which= demopath)
+```
+
